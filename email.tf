@@ -3,7 +3,7 @@ resource "aws_route53_record" "email_mx" {
   name    = ""
   type    = "MX"
   ttl     = 300
-  records = ["10 mail.intimitrons.ca"]
+  records = ["10 mail.intimitrons.ca."]
 }
 
 // mail.intimitrons.ca is currently in use by mail clients
