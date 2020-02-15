@@ -3,7 +3,14 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-// TODO either need a remote_state or use data source w\ name + tag to ensure correct match
+data "terraform_remote_state" "dns" {
+  backend = "remote"
+  hostname = "app.terraform.io"
+  organization = "intimitrons"
+  workspaces {
+    name = "dns"
+  }
+}
 
 // Ensure we maintain easy access to cPanel until we migrate off StableHost
 resource "aws_route53_record" "cpanel" {

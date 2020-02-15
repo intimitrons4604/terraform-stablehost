@@ -1,5 +1,5 @@
 resource "aws_route53_record" "website_primary" {
-  zone_id = "" // TODO
+  zone_id = data.terraform_remote_state.dns.zone_id
   name    = ""
   type    = "A"
   ttl     = 300
@@ -7,7 +7,7 @@ resource "aws_route53_record" "website_primary" {
 }
 
 resource "aws_route53_record" "website_www" {
-  zone_id = "" // TODO
+  zone_id = data.terraform_remote_state.dns.zone_id
   name    = "www"
   type    = "CNAME"
   ttl     = 300
