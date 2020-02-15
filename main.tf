@@ -5,10 +5,12 @@ provider "aws" {
 
 data "terraform_remote_state" "dns" {
   backend = "remote"
-  hostname = "app.terraform.io"
-  organization = "intimitrons"
-  workspaces {
-    name = "dns"
+  config {
+    hostname = "app.terraform.io"
+    organization = "intimitrons"
+    workspaces {
+      name = "dns"
+    }
   }
 }
 
