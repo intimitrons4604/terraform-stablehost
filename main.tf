@@ -5,7 +5,7 @@ provider "aws" {
 
 data "terraform_remote_state" "dns" {
   backend = "remote"
-  config {
+  config = {
     hostname = "app.terraform.io"
     organization = "intimitrons"
     workspaces {
