@@ -14,7 +14,7 @@ data "terraform_remote_state" "dns" {
 
 // Ensure we maintain easy access to cPanel until we migrate off StableHost
 resource "aws_route53_record" "cpanel" {
-  zone_id = "" // TODO
+  zone_id = data.terraform_remote_state.dns.zone_id
   name    = "cpanel"
   type    = "A"
   ttl     = 300
