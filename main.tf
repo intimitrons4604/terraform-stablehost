@@ -8,7 +8,7 @@ data "terraform_remote_state" "dns" {
   config = {
     hostname = "app.terraform.io"
     organization = "intimitrons"
-    workspaces {
+    workspaces = {
       name = "dns"
     }
   }
