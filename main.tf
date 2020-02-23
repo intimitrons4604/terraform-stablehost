@@ -19,6 +19,6 @@ resource "aws_route53_record" "cpanel" {
   zone_id = data.terraform_remote_state.dns.outputs.zone_id
   name    = "cpanel"
   type    = "A"
-  ttl     = 300
+  ttl     = 86400
   records = ["198.20.92.28"]
 }
