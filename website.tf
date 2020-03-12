@@ -18,7 +18,7 @@ resource "aws_route53_record" "website_primary_staging" {
   zone_id = data.terraform_remote_state.dns.outputs.zone_id
   name    = "staging"
   type    = "A"
-  ttl     = 300
+  ttl     = 21600
   records = ["198.20.92.28"]
 }
 
@@ -26,6 +26,6 @@ resource "aws_route53_record" "website_www_staging" {
   zone_id = data.terraform_remote_state.dns.outputs.zone_id
   name    = "www.staging"
   type    = "CNAME"
-  ttl     = 300
+  ttl     = 21600
   records = ["staging.intimitrons.ca."]
 }
