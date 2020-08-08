@@ -9,7 +9,7 @@ data "terraform_remote_state" "dns" {
     hostname     = "app.terraform.io"
     organization = "intimitrons"
     workspaces = {
-      name = "dns"
+      name = "dns-prod"
     }
   }
 }
