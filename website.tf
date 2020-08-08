@@ -11,7 +11,7 @@ resource "aws_route53_record" "website_www" {
   name    = "www"
   type    = "CNAME"
   ttl     = 86400
-  records = ["intimitrons.ca."]
+  records = ["intimitrons.ca"]
 }
 
 resource "aws_route53_record" "website_primary_staging" {
@@ -27,5 +27,5 @@ resource "aws_route53_record" "website_www_staging" {
   name    = "www.staging"
   type    = "CNAME"
   ttl     = 86400
-  records = ["staging.intimitrons.ca."]
+  records = ["staging.intimitrons.ca"]
 }
